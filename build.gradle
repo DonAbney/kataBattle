@@ -1,0 +1,22 @@
+defaultTasks 'clean', 'test', 'viewResults'
+
+apply plugin: 'groovy'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile 'org.codehaus.groovy:groovy-all:2.4.5'
+  testCompile 'junit:junit:4.12'
+}
+
+test {
+    testLogging {
+        exceptionFormat = 'full'    
+    }
+}
+
+task viewResults(type:Exec) {
+    commandLine 'open', '/Users/DonAbney/Dev/kataBattle/build/reports/tests/index.html'
+}
