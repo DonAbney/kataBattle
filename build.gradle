@@ -1,4 +1,4 @@
-defaultTasks 'clean', 'test', 'viewResults'
+defaultTasks 'clean', 'test', 'copyScripts', 'copyAppCode'
 
 apply plugin: 'groovy'
 
@@ -15,6 +15,18 @@ test {
     testLogging {
         exceptionFormat = 'full'    
     }
+}
+
+task copyScripts(type: Copy) {
+    from 'src/test/e2e'
+    into 'deploy'
+    include '**/*.groovy'
+}
+
+task copyAppCode(type: Copy) {
+    from 'build/classes/main'
+    into 'deploy'
+    include '**/*.class'
 }
 
 task viewResults(type:Exec) {

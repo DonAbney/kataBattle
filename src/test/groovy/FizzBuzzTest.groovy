@@ -1,3 +1,5 @@
+package don.fizzbuzz
+
 import org.junit.Test
 
 class FizzBuzzTest {

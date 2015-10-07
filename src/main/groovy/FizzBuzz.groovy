@@ -1,3 +1,5 @@
+package don.fizzbuzz
+
 class FizzBuzz {
     
     public static process(int input) {
