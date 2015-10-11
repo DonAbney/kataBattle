@@ -1,4 +1,4 @@
-defaultTasks 'clean', 'test', 'viewResults'
+defaultTasks 'clean', 'accept', 'viewResults'
 
 apply plugin: 'groovy'
 
@@ -12,22 +12,15 @@ dependencies {
   testCompile "org.spockframework:spock-core:1.0-groovy-2.4"
 }
 
+task accept(type:Test) {
+    include 'kataBattle/e2e/**'
+}
+
 test {
     testLogging {
         exceptionFormat = 'full'    
     }
-}
-
-task copyScripts(type: Copy) {
-    from 'src/test/e2e'
-    into 'deploy'
-    include '**/*.groovy'
-}
-
-task copyAppCode(type: Copy) {
-    from 'build/classes/main'
-    into 'deploy'
-    include '**/*.class'
+    exclude 'kataBattle/e2e/**'
 }
 
 task viewResults(type:Exec) {

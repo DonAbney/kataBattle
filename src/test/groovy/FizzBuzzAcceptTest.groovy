@@ -1,5 +1,6 @@
-package don.fizzbuzz
+package kataBattle.e2e.fizzbuzz
 
+import kataBattle.fizzbuzz.*
 import spock.lang.*
 
 class FizzBuzzAcceptTest extends Specification {
@@ -15,4 +16,5 @@ class FizzBuzzAcceptTest extends Specification {
         actualReturnValue << (1..100).collect{FizzBuzz.process(it)}
         numberToFizzBuzz << (1..100).collect()
     }
+
 }
