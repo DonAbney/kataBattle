@@ -1,13 +1,18 @@
 package don.fizzbuzz
 
-import org.junit.Test
+import spock.lang.*
 
-class FizzBuzzAcceptTest {
+class FizzBuzzAcceptTest extends Specification {
 
-    @Test
-    void shouldDisplayCorrectlyFrom1To100() {
-        (1..100).each { testNumber ->
-            println FizzBuzz.process(testNumber)
-        }
+    @Unroll
+    def "#numberToFizzBuzz should return #expectedReturnValue"() {
+   
+        expect:
+        expectedReturnValue == actualReturnValue
+
+        where:
+        expectedReturnValue << (1..100).collect{((it%3==0?'Fizz':'')+(it%5==0?'Buzz':'')) ?: it} 
+        actualReturnValue << (1..100).collect{FizzBuzz.process(it)}
+        numberToFizzBuzz << (1..100).collect()
     }
 }

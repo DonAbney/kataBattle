@@ -1,4 +1,4 @@
-defaultTasks 'clean', 'test', 'copyScripts', 'copyAppCode'
+defaultTasks 'clean', 'test', 'viewResults'
 
 apply plugin: 'groovy'
 
@@ -9,6 +9,7 @@ repositories {
 dependencies {
   compile 'org.codehaus.groovy:groovy-all:2.4.5'
   testCompile 'junit:junit:4.12'
+  testCompile "org.spockframework:spock-core:1.0-groovy-2.4"
 }
 
 test {
