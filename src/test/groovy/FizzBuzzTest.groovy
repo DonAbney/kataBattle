@@ -5,7 +5,7 @@ import org.junit.Test
 class FizzBuzzTest {
 
   @Test
-  void shouldReturn1for1() {
+  void "returns the number it is handed"() {
     assert(FizzBuzz.process(1) == 1)
   }
 
