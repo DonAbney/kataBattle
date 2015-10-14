@@ -9,4 +9,8 @@ class FizzBuzzTest {
     assert(FizzBuzz.process(1) == 1)
   }
 
+  @Test
+  void "returns the other numbers it is handed"() {
+    assert(FizzBuzz.process(2) == 2)
+  }
 }
