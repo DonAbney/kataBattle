@@ -1,4 +1,4 @@
-defaultTasks 'clean', 'accept', 'viewResults'
+defaultTasks 'clean', 'test'
 
 apply plugin: 'groovy'
 
