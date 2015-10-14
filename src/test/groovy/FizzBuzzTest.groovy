@@ -17,4 +17,8 @@ class FizzBuzzTest {
   void "returns fizz for multiples of 3"() {
     assert(FizzBuzz.process(3) == "Fizz")
   }
+  @Test
+  void "returns fizz for other multiples of 3"() {
+    assert(FizzBuzz.process(6) == "Fizz")
+  }
 }
