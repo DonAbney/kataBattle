@@ -22,7 +22,11 @@ class FizzBuzzTest {
     assert(FizzBuzz.process(6) == "Fizz")
   }
   @Test
-  void "returns buzz for other multiples of 5"() {
+  void "returns buzz for multiples of 5"() {
     assert(FizzBuzz.process(5) == "Buzz")
+  }
+  @Test
+  void "returns buzz for other multiples of 5"() {
+    assert(FizzBuzz.process(10) == "Buzz")
   }
 }
