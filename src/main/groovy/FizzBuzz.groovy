@@ -1,8 +1,9 @@
 package kataBattle.fizzbuzz
 
 class FizzBuzz {
-    
-    public static process(int input) {
-        0
-    }
+
+  public static process(int input) {
+    0
+  }
+
 }
